@@ -10,6 +10,12 @@ public class SuccessDataResult <T>extends DataResult<T>{
 		super(data, true, message);
 	}
 	
+	public SuccessDataResult(  String message) {
+		super(null, true, message);
+	}
+	
+	
+	
 	
 
 }

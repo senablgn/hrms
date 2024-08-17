@@ -31,7 +31,7 @@ public class UserManager implements UserService{
 	
 	public DataResult<List<User>> getUsers() {
 		
-		return new SuccessDataResult<List<User>>(this.userDao.findAll(), "users listed");
+		return new SuccessDataResult<List<User>>("users listed");
 				
 	}
 
@@ -39,7 +39,7 @@ public class UserManager implements UserService{
 
 	@Override
 	public Result add(User user) {
-		userDao.save(user);
+		
 		return new SuccessResult("user added");
 	}
 	

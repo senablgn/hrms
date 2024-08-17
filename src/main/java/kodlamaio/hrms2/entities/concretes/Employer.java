@@ -8,11 +8,10 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name="employers")
-public class Employer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="employer_id")
-	private int employerId;
+@PrimaryKeyJoinColumn(name="employer_id", referencedColumnName = "id")
+public class Employer extends User{
+	
+	
 	@Column(name="web_site")
 	private String webSite;
 	@Column(name="company_name")

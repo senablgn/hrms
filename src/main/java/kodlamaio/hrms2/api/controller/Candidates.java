@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlamaio.hrms2.business.abstracts.CandidateService;
-import kodlamaio.hrms2.business.abstracts.EmployerService;
+
 import kodlamaio.hrms2.core.utilities.results.DataResult;
 import kodlamaio.hrms2.core.utilities.results.Result;
 import kodlamaio.hrms2.entities.concretes.Candidate;
-import kodlamaio.hrms2.entities.concretes.Employer;
-import kodlamaio.hrms2.entities.concretes.User;
+
 @RestController
 @RequestMapping("/api/candidates")
 public class Candidates {
