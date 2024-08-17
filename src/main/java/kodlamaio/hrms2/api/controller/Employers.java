@@ -35,5 +35,7 @@ public class Employers {
 	public Result addUser(@RequestBody Employer employer) {
 		return this.employerService.add(employer);
 	}
+	
+	
 
 }
