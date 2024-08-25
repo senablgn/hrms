@@ -27,7 +27,7 @@ public class Users {
 	
 	@GetMapping("/getUsers")
 	public DataResult<List<User>> getUsers() {
-	//	return new SuccessDataResult<List<User>>(this.userService.getUsers(), "");
+	
 		return this.userService.getUsers();
 	}
 		

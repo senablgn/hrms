@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlamaio.hrms2.business.abstracts.JobAdvertService;
@@ -34,5 +35,23 @@ public class JobAdverts {
 	public DataResult<List<JobAdvert>> getAllSorted(){
 		return this.jobAdvertService.getAllSorted();
 	}
+	
+	@GetMapping("/getByCityId")
+	public DataResult<List<JobAdvert>> getByCityId(@RequestParam int cityId){
+		return this.jobAdvertService.getByCityId(cityId);
+	}
+	
+	@GetMapping("/getByJobPositionId")
+	public DataResult<List<JobAdvert>> getByJobPositionId(@RequestParam int jobPositionId) {
+		return this.jobAdvertService.getByJobPositionId(jobPositionId);
+	}
+	
+	@GetMapping("/getByCityIdAndPositionId")
+	public DataResult<List<JobAdvert>> getByCityIdAndJobPositionId(@RequestParam int cityId, int jobPositionId){
+		
+		return this.jobAdvertService.getByCityIdAndJobPositionId(cityId, jobPositionId);
+	}
+	
+	
 
 }

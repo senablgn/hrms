@@ -42,6 +42,45 @@ public class JobAdvertManager implements JobAdvertService{
 		
 		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.findAll(sort), "listed");
 	}
+
+
+
+	@Override
+	public DataResult<List<JobAdvert>> getByCityId(int cityId) {
+		
+		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.getByCity_Id(cityId),
+				"job adverts listed");
+	}
+
+
+
+	@Override
+	public DataResult<List<JobAdvert>> getByJobPositionId(int jobPositionId) {
+		
+		return new SuccessDataResult<List<JobAdvert>>
+		(this.jobAdvertDao.getByJobPosition_Id(jobPositionId), "job adverts listed");
+	}
+
+
+
+	@Override
+	public DataResult<List<JobAdvert>> getByCityIdAndJobPositionId(int cityId, int jobPositionId) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<JobAdvert>>
+		(this.jobAdvertDao.getByCity_IdAndJobPosition_Id(cityId, jobPositionId), "listed");
+	}
+
+
+
+	
+
+
+
+	
+	
+	
+	
+	
 	
 	
 	
