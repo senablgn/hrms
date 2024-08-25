@@ -25,9 +25,9 @@ public class JobPositions {
 	
 	
 	@Autowired
-	public JobPositions(JobPositionService jobTitleService) {
+	public JobPositions(JobPositionService jobPositionService) {
 		super();
-		this.jobPositionService = jobPositionService;
+		this.jobPositionService=jobPositionService;
 	}
 
 
