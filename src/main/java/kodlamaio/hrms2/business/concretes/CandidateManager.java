@@ -15,6 +15,8 @@ import kodlamaio.hrms2.core.utilities.results.SuccessResult;
 import kodlamaio.hrms2.core.verifications.abstracts.EmailVerificationService;
 import kodlamaio.hrms2.dataAccess.abstracts.CandidateDao;
 import kodlamaio.hrms2.entities.concretes.Candidate;
+import kodlamaio.hrms2.entities.concretes.dtos.CvDto;
+
 
 @Service
 public class CandidateManager implements CandidateService{
@@ -61,6 +63,23 @@ public class CandidateManager implements CandidateService{
 		
 		
 	}
+
+
+
+
+
+
+	@Override
+	public DataResult<List<CvDto>> getCvDtos() {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<CvDto>>(this.candidateDao.getCvDtos(), "dtos listed");
+	}
+	
+	
+
+
+
+	
 	
 	
 	
