@@ -1,6 +1,7 @@
 package kodlamaio.hrms2.entities.concretes;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 
 @Entity
@@ -16,6 +17,7 @@ public class User {
 	@Column(name="id")
 	private int id;
 	
+	@Email
 	@Column(name="email")
 	private String email;
 	

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.validation.Valid;
 import kodlamaio.hrms2.business.abstracts.CandidateService;
 import kodlamaio.hrms2.core.utilities.results.DataResult;
 import kodlamaio.hrms2.core.utilities.results.ErrorDataResult;
@@ -35,13 +37,13 @@ public class Candidates {
 	}
 
 	@GetMapping("/getCandidates")
-	public DataResult<List<Candidate>> getEmployers() {
-		return this.candidateService.getCandidates();
+	public ResponseEntity<Object> getCandidates() {
+		return ResponseEntity.ok(this.candidateService.getCandidates());
 
 	}
 
 	@PostMapping("/addCandidate")
-	public ResponseEntity<Object> addUser(@RequestBody Candidate candidate) {
+	public ResponseEntity<Object> addUser(@Valid @RequestBody Candidate candidate) {
 		return ResponseEntity.ok(this.candidateService.add(candidate));
 	}
 
